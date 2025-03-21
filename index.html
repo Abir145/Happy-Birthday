@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .welcome-box, .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 3px solid white;
+        }
+        .celebration-box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, blue, skyblue);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 3px solid white;
+        }
+        .cake-box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, rgb(105, 45, 2), rgb(190, 83, 6));
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 3px solid white;
+        }
+        .slice-box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, rgb(105, 45, 2), white);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 3px solid white;
+        }
+        .music-box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, green, lightgreen);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 3px solid white;
+        }
+        .special-message-box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, red, rgb(243, 174, 174));
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 3px solid white;
+        }
+        .welcome-box p, .message p, .celebration-box p, .cake-box p, .slice-box p, .music-box p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .special-message-box p{
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .welcome-box button, .message button, .celebration-box button, .special-message-box button {
+            margin-top: 10px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .cake-box button{
+            margin-top: 10px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background: rgb(49, 21, 1);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .slice-box button{
+            margin-top: 10px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background: chocolate;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .music-box button{
+            margin-top: 10px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background: chartreuse;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .welcome-box button:hover, .message button:hover, .celebration-box button:hover, .special-message-box button:hover {
+            background: #ff0055;
+            transform: scale(1.1);
+        }
+        .cake-box button:hover{
+            background: rgb(49, 21, 1);
+            transform: scale(1.1);
+        }
+        .slice-box button:hover{
+            background: chocolate;
+            transform: scale(1.1);
+        }
+        .music-box button:hover{
+            background: chartreuse;
+            transform: scale(1.1);
+        }
+        .message, .celebration-box, .cake-box, .slice-box, .music-box, .special-message-box {
+            display: none;
+        }
+        .cake-box img, .slice-box img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+        .balloon, .star, .poppers {
+            position: absolute;
+            z-index: 1;
+        }
+        .balloon {
+            width: 50px;
+            height: 70px;
+            border-radius: 50%;
+            bottom: -100px;
+            animation: floatBalloon 5s infinite ease-in-out;
+        }
+        @keyframes floatBalloon {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-110vh); opacity: 0; }
+        }
+        .star {
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+        .poppers {
+            width: 10px;
+            height: 10px;
+            background: gold;
+            border-radius: 50%;
+            animation: pop 1s ease-out;
+        }
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-box" id="welcomeBox">
+        <p>Hey Kuchipudi! How are you doing😉? I have designed a little surprise for you 🤓</p>
+        <button onclick="showCelebrationMessage()">Let's See 😀</button>
+    </div>
+    <div class="celebration-box" id="celebrationBox">
+        <p>Today is 6th April, 2025. It's your Birthday.</p>
+        <button onclick="showCakeMessage()">Let's Celebrate! 🎉🎉🥳🥳🪩</button>
+    </div>
+    <div class="cake-box" id="cakeBox">
+        <p>Here is your Birthday Cake! 🎂</p>
+        <img src="cake.png" alt="Birthday Cake">
+        <button onclick="lightCandle()">Blow Out the candle and Cut the Cake</button>
+    </div>
+    <div class="slice-box" id="sliceBox">
+        <p>Here is a slice for you. Taste it! 🍰</p>
+        <img src="slice.png" alt="Cake Slice">
+        <button onclick="playMusic()">Let's Play Some Music 🎶</button>
+    </div>
+    <div class="music-box" id="musicBox">
+        <p>Enjoy The Song! 🎵</p>
+        <button onclick="showSpecialMessage()">A special message for you 💌</button>
+    </div>
+    <div class="special-message-box" id="specialMessageBox">
+        <p>Happy Birthday, Deboshree! Many Many Happy Returns of The Day. You are truly special for me. The way you stand by me whenever I'm low, the way you trust me - it really means a lot. I want you stay as you are and don't change yourself because it only suits you and I truly love the way you are. On this special day, I want to thank you for being my comfort & safe zone and I want to be the same for you throught my life. I wish you all the best for your future, may God bless you and you get everything you want.🤗❤️💞</p>
+    </div>
+    <script>
+        function showCelebrationMessage() {
+            document.getElementById("welcomeBox").style.display = "none";
+            document.getElementById("celebrationBox").style.display = "block";
+        }
+        function showCakeMessage() {
+            document.getElementById("celebrationBox").style.display = "none";
+            document.getElementById("cakeBox").style.display = "block";
+        }
+        function lightCandle() {
+            document.getElementById("cakeBox").style.display = "none";
+            document.getElementById("sliceBox").style.display = "block";
+        }
+        function playMusic() {
+            let audio = new Audio('apna bana le.mp3');
+            audio.play();
+            document.getElementById("sliceBox").style.display = "none";
+            document.getElementById("musicBox").style.display = "block";
+        }
+        function showSpecialMessage() {
+            document.getElementById("musicBox").style.display = "none";
+            document.getElementById("specialMessageBox").style.display = "block";
+        }
+
+        function createBalloon() {
+            for (let i = 0; i < 10; i++) {
+                const balloon = document.createElement("div");
+                balloon.classList.add("balloon");
+                document.body.appendChild(balloon);
+                const colors = ["red", "blue", "yellow", "green", "purple", "pink", "orange", "cyan"];
+                balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+                balloon.style.left = Math.random() * window.innerWidth + "px";
+                balloon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+                setTimeout(() => {
+                    balloon.remove();
+                }, 5000);
+            }
+        }
+        function createStars() {
+            for (let i = 0; i < 250; i++) {
+                const star = document.createElement("div");
+                star.classList.add("star");
+                document.body.appendChild(star);
+                star.style.left = Math.random() * window.innerWidth + "px";
+                star.style.top = Math.random() * window.innerHeight + "px";
+                setTimeout(() => {
+                    star.remove();
+                }, 2000);
+            }
+        }
+        function createSparkles() {
+            for (let i = 0; i < 100; i++) {
+                const sparkle = document.createElement("div");
+                sparkle.classList.add("sparkle");
+                document.body.appendChild(sparkle);
+                sparkle.style.left = Math.random() * window.innerWidth + "px";
+                sparkle.style.top = Math.random() * window.innerHeight + "px";
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1500);
+            }
+        }
+        setInterval(createBalloon, 1000);
+        setInterval(createStars, 500);
+        setInterval(createSparkles, 700);
+    </script>
+</body>
+</html>
